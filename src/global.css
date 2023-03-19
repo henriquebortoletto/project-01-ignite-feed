@@ -1,0 +1,41 @@
+:root {
+  --brand-font: 'Roboto', sans-serif;
+  --brand-color-white: #ffffff;
+  --brand-color-gray-100: #e1e1e6;
+  --brand-color-gray-300: #c4c4cc;
+  --brand-color-gray-400: #8d8d99;
+  --brand-color-gray-600: #323238;
+  --brand-color-gray-700: #29292e;
+  --brand-color-gray-800: #202024;
+  --brand-color-gray-900: #121214;
+  --brand-color-green-500: #00875f;
+}
+
+*,
+*::before,
+*::after {
+  font-family: var(--brand-font);
+  font-weight: 400;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--brand-color-gray-900);
+  color: var(--brand-color-gray-300);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
