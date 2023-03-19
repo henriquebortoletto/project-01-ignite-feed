@@ -1,0 +1,14 @@
+.container {
+  --spacing: 3.2rem;
+
+  width: 100%;
+  max-width: calc(112rem + var(--spacing));
+  margin: 3.2rem auto;
+  padding-left: calc(var(--spacing) / 2);
+  padding-right: calc(var(--spacing) / 2);
+
+  display: grid;
+  grid-template-columns: 25.6rem 1fr;
+  gap: var(--spacing);
+  align-items: flex-start;
+}

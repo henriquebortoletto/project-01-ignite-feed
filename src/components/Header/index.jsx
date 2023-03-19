@@ -1,4 +1,4 @@
-import igniteFeedlogo from '@/assets/ignitefeed-logo.svg';
+import igniteFeedlogo from '@/assets/ignitefeed-logo.svg'
 
 import S from './styles.module.css'
 
