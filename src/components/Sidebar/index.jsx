@@ -13,7 +13,11 @@ function Sidebar() {
       </div>
       <div className={S.profile}>
         <div className={S.avatar}>
-          <img src="https://github.com/henriquebortoletto.png" alt="Imagem de avatar do usuario" />
+          <img
+            src="https://github.com/henriquebortoletto.png"
+            alt="Imagem de avatar do usuario"
+            loading="lazy"
+          />
         </div>
         <strong>Henrique Bortoletto</strong>
         <p>Software Engineer</p>

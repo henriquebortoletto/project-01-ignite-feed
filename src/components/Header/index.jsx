@@ -6,7 +6,12 @@ function Header() {
   return (
     <header className={S.header}>
       <div className={S.container}>
-        <img className={S.logo} src={igniteFeedlogo} alt="Logotipo do ignite feed" loading="lazy" />
+        <img
+          className={S.logo}
+          src={igniteFeedlogo}
+          alt="Logotipo do ignite feed"
+          loading="lazy"
+        />
         <h1 className={S.title}>Ignite Feed</h1>
       </div>
     </header>
