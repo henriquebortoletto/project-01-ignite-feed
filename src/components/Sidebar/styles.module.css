@@ -61,6 +61,14 @@
   transition: color .1s, background-color .1s;
 }
 
+.footer a:focus {
+  outline: none;
+  border: 1px solid var(--brand-color-green-500);
+  box-shadow:
+    0 0 0 2px var(--brand-color-green-300),
+    0 0 0 6px var(--brand-color-green-opacity-20);
+}
+
 .footer a span {
   font-weight: 700;
   line-height: 1.9rem;

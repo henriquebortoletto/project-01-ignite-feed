@@ -10,6 +10,7 @@
   --brand-color-gray-900: #121214;
   --brand-color-green-300: #00b37e;
   --brand-color-green-500: #00875f;
+  --brand-color-green-opacity-20: rgba(0, 179, 125, 0.2);
 }
 
 *,
