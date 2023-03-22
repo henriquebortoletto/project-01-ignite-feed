@@ -4,6 +4,7 @@
   --brand-color-gray-100: #e1e1e6;
   --brand-color-gray-300: #c4c4cc;
   --brand-color-gray-400: #8d8d99;
+  --brand-color-gray-500: #7c7c8a;
   --brand-color-gray-600: #323238;
   --brand-color-gray-700: #29292e;
   --brand-color-gray-800: #202024;
@@ -11,6 +12,13 @@
   --brand-color-green-300: #00b37e;
   --brand-color-green-500: #00875f;
   --brand-color-green-opacity-20: rgba(0, 179, 125, 0.2);
+}
+
+:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--brand-color-green-300),
+    0 0 0 6px var(--brand-color-green-opacity-20);
 }
 
 *,
