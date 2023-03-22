@@ -79,3 +79,64 @@
   color: var(--brand-color-green-300);
   text-decoration: underline;
 }
+
+.form {
+  width: 100%;
+  margin-top: 2.4rem;
+  border-top: 1px solid var(--brand-color-gray-600);
+}
+
+.form strong {
+  font-weight: 700;
+  line-height: 160%;
+  color: var(--brand-color-gray-100);
+  display: block;
+
+  margin-top: 2.4rem;
+  margin-bottom: 1.6rem;
+}
+
+.form textarea {
+  line-height: 140%;
+  color: var(--brand-color-gray-300);
+  background: var(--brand-color-gray-900);
+  border-radius: 8px;
+
+  min-height: 9.6rem;
+  width: 100%;
+
+  padding: 1.3rem 1.6rem;
+  resize: none;
+}
+
+.form textarea::placeholder {
+  color: var(--brand-color-gray-500);
+}
+
+.form:focus-within .btn {
+  visibility: visible;
+  max-height: none;
+}
+
+.btn {
+  visibility: hidden;
+  max-height: 0;
+}
+
+.btn [type="submit"] {
+  font-weight: 700;
+  line-height: 1.9rem;
+  background-color: var(--brand-color-green-500);
+  color: var(--brand-color-white);
+
+  padding: 1.6rem 2.4rem 1.4rem;
+  margin-top: 1.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: color .1s, background-color .1s;
+}
+
+.btn [type="submit"]:hover {
+  background-color: var(--brand-color-green-300);
+}

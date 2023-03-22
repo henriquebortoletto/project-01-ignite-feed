@@ -36,9 +36,15 @@ function Post(props) {
         </p>
       </div>
 
-      <div>
-        ...comentarios
-      </div>
+      <form className={S.form}>
+        <strong>Deixe seu feedback</strong>
+        <textarea
+          placeholder="Escreva um comentário..."
+        />
+        <div className={S.btn}>
+          <button type="submit">Publicar</button>
+        </div>
+      </form>
     </section>
   )
 }
