@@ -1,7 +1,4 @@
 .container {
-  --image: 4.9rem;
-  --spacing: 4px;
-
   background-color: var(--brand-color-gray-800);
   border-radius: 8px;
   overflow: hidden;
@@ -18,7 +15,7 @@
   flex-direction: column;
   align-items: center;
 
-  margin-top: calc(0px - (var(--image) / 2) - (var(--spacing) / 2));
+  margin-top: calc(0px - (var(--thumb-width) / 2) - (var(--thumb-spacing) / 2));
 }
 
 .profile strong {
@@ -35,10 +32,10 @@
 }
 
 .avatar img {
-  width: calc(var(--image) + var(--spacing));
-  height: calc(var(--image) + var(--spacing));
-  border: calc(var(--spacing) / 2) solid var(--brand-color-gray-800);
-  outline: calc(var(--spacing) / 2) solid var(--brand-color-green-300);
+  width: calc(var(--thumb-width) + var(--thumb-spacing));
+  height: calc(var(--thumb-width) + var(--thumb-spacing));
+  border: calc(var(--thumb-spacing) / 2) solid var(--brand-color-gray-800);
+  outline: calc(var(--thumb-spacing) / 2) solid var(--brand-color-green-300);
   border-radius: 8px;
 }
 
