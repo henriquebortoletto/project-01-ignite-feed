@@ -140,3 +140,7 @@
 .btn [type="submit"]:hover {
   background-color: var(--brand-color-green-300);
 }
+
+.comments {
+  margin-top: 3.2rem;
+}

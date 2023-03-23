@@ -1,0 +1,108 @@
+.comment {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+
+.thumb img {
+  width: calc(var(--thumb-width) + var(--thumb-spacing));
+  height: calc(var(--thumb-width) + var(--thumb-spacing));
+  border-radius: 8px;
+}
+
+.comment:not(:first-child) {
+  margin-top: 2.4rem;
+}
+
+.wrapper {
+  flex: 1;
+}
+
+.content {
+  background-color: var(--brand-color-gray-700);
+  border-radius: 9px;
+  padding: 1.6rem;
+}
+
+.content p {
+  font-size: 1.4rem;
+  line-height: 160%;
+  margin-top: 1.6rem;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.header button {
+  color: var(--brand-color-gray-400);
+  cursor: pointer;
+  line-height: 0;
+  padding: 0.25rem;
+
+  transition: color .2s;
+}
+
+.header button:hover {
+  color: var(--brand-color-red-500);
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+}
+
+.user strong,
+.user strong span {
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 160%;
+}
+
+.user strong {
+  color: var(--brand-color-gray-100);
+}
+
+.user strong span {
+  color: var(--brand-color-gray-400);
+}
+
+.user time {
+  font-size: 1.2rem;
+  line-height: 160%;
+  color: var(--brand-color-gray-400);
+}
+
+.feedback {
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  color: var(--brand-color-gray-400);
+
+  display: flex;
+  align-items: center;
+
+  margin-top: 1.6rem;
+  cursor: pointer;
+
+  transition: color .2s;
+}
+
+.feedback.pressed {
+  color: var(--brand-color-green-300);
+}
+
+.feedback:hover {
+  color: var(--brand-color-gray-100);
+}
+
+.feedback svg {
+  margin-right: 1rem;
+}
+
+.feedback span:first-of-type::after {
+  content: "\2022";
+  padding: 0 0.4rem;
+}
