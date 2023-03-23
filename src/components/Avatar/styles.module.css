@@ -1,0 +1,13 @@
+.avatar img {
+  width: calc(var(--thumb-width) + var(--thumb-spacing));
+  height: calc(var(--thumb-width) + var(--thumb-spacing));
+  border-radius: 8px;
+}
+
+.avatar_has_border img {
+  width: calc(var(--thumb-width) + var(--thumb-spacing));
+  height: calc(var(--thumb-width) + var(--thumb-spacing));
+  border: calc(var(--thumb-spacing) / 2) solid var(--brand-color-gray-800);
+  outline: calc(var(--thumb-spacing) / 2) solid var(--brand-color-green-300);
+  border-radius: 8px;
+}

@@ -1,3 +1,4 @@
+import Avatar from '@/components/Avatar'
 import Comment from '@/components/Comment'
 
 import S from './styles.module.css'
@@ -6,14 +7,8 @@ function Post(props) {
   return (
     <section className={S.post}>
       <div className={S.header}>
-        <div className={S.avatar}>
-          <div className={S.thumb}>
-            <img
-              src="https://github.com/henriquebortoletto.png"
-              alt="Imagem de avatar do usuario"
-              loading="lazy"
-            />
-          </div>
+        <div className={S.profile}>
+          <Avatar src="https://github.com/henriquebortoletto.png" />
           <div className={S.info}>
             <strong>Henrique Bortoletto</strong>
             <p>Software Engineer</p>

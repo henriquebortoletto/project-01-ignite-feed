@@ -14,18 +14,10 @@
   align-items: center;
 }
 
-.avatar {
+.profile {
   display: flex;
   align-items: center;
   gap: 1.6rem;
-}
-
-.thumb img {
-  width: calc(var(--thumb-width) + var(--thumb-spacing));
-  height: calc(var(--thumb-width) + var(--thumb-spacing));
-  border: calc(var(--thumb-spacing) / 2) solid var(--brand-color-gray-800);
-  outline: calc(var(--thumb-spacing) / 2) solid var(--brand-color-green-300);
-  border-radius: 8px;
 }
 
 .info {

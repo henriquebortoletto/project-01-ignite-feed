@@ -1,5 +1,6 @@
 import { PencilSimpleLine } from '@phosphor-icons/react'
 
+import Avatar from '@/components/Avatar'
 import S from './styles.module.css'
 
 function Sidebar() {
@@ -12,13 +13,7 @@ function Sidebar() {
         />
       </div>
       <div className={S.profile}>
-        <div className={S.avatar}>
-          <img
-            src="https://github.com/henriquebortoletto.png"
-            alt="Imagem de avatar do usuario"
-            loading="lazy"
-          />
-        </div>
+        <Avatar src="https://github.com/henriquebortoletto.png" />
         <strong>Henrique Bortoletto</strong>
         <p>Software Engineer</p>
       </div>
