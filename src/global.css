@@ -18,13 +18,6 @@
   --brand-color-red-500: #f75a68;
 }
 
-:focus {
-  outline: none;
-  box-shadow:
-    0 0 0 2px var(--brand-color-green-300),
-    0 0 0 6px var(--brand-color-green-opacity-20);
-}
-
 *,
 *::before,
 *::after {
@@ -56,4 +49,32 @@ img {
 
 button {
   background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 1.8rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-color-green-300);
+  border-right: 0.4rem solid var(--brand-color-gray-900);
+  border-left: 0.4rem solid var(--brand-color-gray-900);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--brand-color-gray-900);
+}
+
+:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--brand-color-green-300),
+    0 0 0 6px var(--brand-color-green-opacity-20);
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 54.6875%;
+  }
 }

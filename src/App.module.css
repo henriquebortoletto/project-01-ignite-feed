@@ -15,3 +15,9 @@
   gap: var(--gap-default);
   align-items: flex-start;
 }
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
