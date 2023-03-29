@@ -1,36 +1,49 @@
+import { format, formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
+
 import Avatar from '@/components/Avatar'
 import Comment from '@/components/Comment'
 
 import S from './styles.module.css'
 
-function Post(props) {
+function Post({ author, content, publishedAt }) {
+  const publishedDateFormat = format(publishedAt, "dd 'de' LLLL 'às' HH:mm'h'", {
+    locale: ptBR
+  })
+
+  const publishedDateToNow = formatDistanceToNow(publishedAt, {
+    locale: ptBR,
+    addSuffix: true
+  })
+
   return (
     <section className={S.post}>
       <div className={S.header}>
         <div className={S.profile}>
-          <Avatar src="https://github.com/henriquebortoletto.png" />
+          <Avatar src={author.avatarUrl} />
           <div className={S.info}>
-            <strong>Henrique Bortoletto</strong>
-            <p>Software Engineer</p>
+            <strong>{author.name}</strong>
+            <p>{author.role}</p>
           </div>
         </div>
         <time
-          dateTime="2022-05-11 08:13:30"
-          title="11 de Maio às 08:13h"
+          dateTime={publishedAt.toISOString()}
+          title={publishedDateFormat}
         >
-          Públicado há 1h
+          {publishedDateToNow}
         </time>
       </div>
 
       <div className={S.content}>
-        <p>Fala galeraa 👋</p>
-        <p>Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀</p>
-        <p>👉&nbsp;<a href="https://github.com/henriquebortoletto" target="_blank">github.com/henriquebortoletto</a></p>
-        <p>
-          <span>#novoprojeto</span>
-          <span>#nlw</span>
-          <span>#rocketseat</span>
-        </p>
+        {content.map(({ type, content, children = [] }) => {
+          if(type === 'paragraph') {
+            return <p>{content}</p>
+          } else if(type === 'link') {
+            return <p>{children.map(({ content }) => <a href="#">{content}</a>)}</p>
+          } else if(type === 'span') {
+            return <p>{children.map(({ content }) => <span>{content}</span>)}</p>
+          }
+        })}
       </div>
 
       <form className={S.form}>
