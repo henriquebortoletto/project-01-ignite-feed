@@ -3,7 +3,7 @@ import { Trash, ThumbsUp } from '@phosphor-icons/react'
 import Avatar from '@/components/Avatar'
 import S from './styles.module.css'
 
-function Comment() {
+function Comment({ content }) {
   return (
     <div className={S.comment}>
       <Avatar
@@ -26,7 +26,7 @@ function Comment() {
               <Trash size={24} />
             </button>
           </div>
-          <p>Muito bom Devon, parabéns!! 👏👏</p>
+          <p>{content}</p>
         </div>
         <button className={S.feedback}>
           <ThumbsUp size={20} />

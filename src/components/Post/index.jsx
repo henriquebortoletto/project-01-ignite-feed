@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { format, formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
 
@@ -7,6 +8,9 @@ import Comment from '@/components/Comment'
 import S from './styles.module.css'
 
 function Post({ author, content, publishedAt }) {
+  const [commentValue, setCommentValue] = useState('')
+  const [comments, setComments] = useState(['Iw aew Beleza'])
+
   const publishedDateFormat = format(publishedAt, "dd 'de' LLLL 'às' HH:mm'h'", {
     locale: ptBR
   })
@@ -15,6 +19,17 @@ function Post({ author, content, publishedAt }) {
     locale: ptBR,
     addSuffix: true
   })
+
+  function handleSubmitNewComment() {
+    event.preventDefault()
+
+    setComments([...comments, commentValue])
+    setCommentValue('')
+  }
+
+  function handleChangeNewValue() {
+    setCommentValue(event.target.value)
+  }
 
   return (
     <section className={S.post}>
@@ -46,10 +61,16 @@ function Post({ author, content, publishedAt }) {
         })}
       </div>
 
-      <form className={S.form}>
+      <form
+        className={S.form}
+        onSubmit={handleSubmitNewComment}
+      >
         <strong>Deixe seu feedback</strong>
         <textarea
+          name="comment"
           placeholder="Escreva um comentário..."
+          value={commentValue}
+          onChange={handleChangeNewValue}
         />
         <div className={S.btn}>
           <button type="submit">Publicar</button>
@@ -57,9 +78,11 @@ function Post({ author, content, publishedAt }) {
       </form>
 
       <div className={S.comments}>
-        <Comment />
-        <Comment />
-        <Comment />
+        {comments.map((comment) => (
+          <Comment
+            content={comment}
+          />
+        ))}
       </div>
     </section>
   )
