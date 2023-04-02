@@ -18,15 +18,23 @@ export const posts = [
       {
         type: "link",
         children: [
-          { content: "🎉 github.com/henriquebortoletto" }
+          {
+            content: "🎉 github.com/henriquebortoletto"
+          }
         ]
       },
       {
         type: "span",
         children: [
-          { content: "#novoprojeto" },
-          { content: "#nlw" },
-          { content: "#rocketseat" }
+          {
+            content: "#novoprojeto"
+          },
+          {
+            content: "#nlw"
+          },
+          {
+            content: "#rocketseat"
+          }
         ]
       }
     ],
@@ -51,15 +59,23 @@ export const posts = [
       {
         type: "link",
         children: [
-          { content: "🎉 github.com/henriquebortoletto" }
+          {
+            content: "🎉 github.com/henriquebortoletto"
+          }
         ]
       },
       {
         type: "span",
         children: [
-          { content: "#novoprojeto" },
-          { content: "#nlw" },
-          { content: "#rocketseat" }
+          {
+            content: "#novoprojeto"
+          },
+          {
+            content: "#nlw"
+          },
+          {
+            content: "#rocketseat"
+          }
         ]
       }
     ],
