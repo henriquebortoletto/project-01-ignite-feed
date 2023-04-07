@@ -27,6 +27,12 @@ function Post({ author, content, publishedAt }) {
     setCommentValue('')
   }
 
+  function handleDeleteComment(commentToDelete) {
+    const deletingCommentFromComments = comments.filter((comment) => comment !== commentToDelete)
+
+    setComments(deletingCommentFromComments)
+  }
+
   function handleChangeNewValue() {
     setCommentValue(event.target.value)
   }
@@ -77,14 +83,17 @@ function Post({ author, content, publishedAt }) {
         </div>
       </form>
 
-      <div className={S.comments}>
-        {comments.map((comment) => (
-          <Comment
-            key={comment}
-            content={comment}
-          />
-        ))}
-      </div>
+      {!!comments.length && (
+        <div className={S.comments}>
+          {comments.map((comment) => (
+            <Comment
+              key={comment}
+              content={comment}
+              onDeleteComment={handleDeleteComment}
+            />
+          ))}
+        </div>
+      )}
     </section>
   )
 }
