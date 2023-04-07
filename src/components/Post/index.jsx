@@ -56,7 +56,7 @@ function Post({ author, content, publishedAt }) {
       </div>
 
       <div className={S.content}>
-        {content.map(({ type, content}) => {
+        {content.map(({ type, content }) => {
           if(type === 'paragraph') {
             return <p key={content}>{content}</p>
           } else if(type === 'link') {
