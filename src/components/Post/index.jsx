@@ -20,7 +20,7 @@ function Post({ author, content, publishedAt }) {
     addSuffix: true
   })
 
-  function handleSubmitNewComment() {
+  function handleCreateNewComment() {
     event.preventDefault()
 
     setComments([...comments, commentValue])
@@ -50,20 +50,20 @@ function Post({ author, content, publishedAt }) {
       </div>
 
       <div className={S.content}>
-        {content.map(({ type, content, children = [] }) => {
+        {content.map(({ type, content}) => {
           if(type === 'paragraph') {
-            return <p>{content}</p>
+            return <p key={content}>{content}</p>
           } else if(type === 'link') {
-            return <p>{children.map(({ content }) => <a href="#">{content}</a>)}</p>
+            return <p key={content}><a href="#">{content}</a></p>
           } else if(type === 'span') {
-            return <p>{children.map(({ content }) => <span>{content}</span>)}</p>
+            return <p key={content}>{content.split(",").map((tag) => <span key={tag}>{tag}</span>)}</p>
           }
         })}
       </div>
 
       <form
         className={S.form}
-        onSubmit={handleSubmitNewComment}
+        onSubmit={handleCreateNewComment}
       >
         <strong>Deixe seu feedback</strong>
         <textarea
@@ -80,6 +80,7 @@ function Post({ author, content, publishedAt }) {
       <div className={S.comments}>
         {comments.map((comment) => (
           <Comment
+            key={comment}
             content={comment}
           />
         ))}

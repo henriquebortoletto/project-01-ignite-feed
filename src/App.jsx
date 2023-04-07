@@ -14,11 +14,12 @@ function App() {
       <main className={S.container}>
         <Sidebar />
         <div>
-          {posts.map(({ author, content, publishedAt }) => (
+          {posts.map((post) => (
             <Post
-              author={author}
-              content={content}
-              publishedAt={publishedAt}
+              key={post.id}
+              author={post.author}
+              content={post.content}
+              publishedAt={post.publishedAt}
             />
           ))}
         </div>
