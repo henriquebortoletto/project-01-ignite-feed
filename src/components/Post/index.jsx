@@ -34,8 +34,15 @@ function Post({ author, content, publishedAt }) {
   }
 
   function handleChangeNewValue() {
+    event.target.setCustomValidity('')
     setCommentValue(event.target.value)
   }
+
+  function handleNewValueInvalid() {
+    event.target.setCustomValidity('Esse campo é obrigatório!')
+  }
+
+  const isNewValueEmpty = !commentValue
 
   return (
     <section className={S.post}>
@@ -77,9 +84,16 @@ function Post({ author, content, publishedAt }) {
           placeholder="Escreva um comentário..."
           value={commentValue}
           onChange={handleChangeNewValue}
+          onInvalid={handleNewValueInvalid}
+          required
         />
         <div className={S.btn}>
-          <button type="submit">Publicar</button>
+          <button
+            type="submit"
+            disabled={isNewValueEmpty}
+          >
+            Publicar
+          </button>
         </div>
       </form>
 
