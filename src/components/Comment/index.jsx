@@ -12,7 +12,9 @@ function Comment({ content, onDeleteComment }) {
   }
 
   function handleLikeComment() {
-    setLikeCount(likeCount + 1)
+    setLikeCount((state) => {
+      return state + 1
+    })
   }
 
   const isLike = !likeCount ? `${S.feedback}` : `${S.feedback} ${S.pressed}`
