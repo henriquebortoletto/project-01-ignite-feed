@@ -16,7 +16,17 @@
 ## 🚀 Sobre
 
 Projeto ignite feed pertence ao primeiro modulo do curso da plataforma `rocketseat`, cuja finalidade
-do aprendizado e entender os principais conceitos do react aplicados a um projeto de feed de noticias.
+do aprendizado é entender os principais conceitos do react aplicados a um projeto de feed de noticias.
+
+---
+
+## 💽 Módulos
+
+- [x] Iniciando com React;
+- [x] Estrutura da aplicação;
+- [x] Os motores do React;
+- [x] Aprimorando a aplicação;
+- [x] Término do módulo;
 
 ---
 
