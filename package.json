@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/henriquebortoletto/ignite-feed.git"
+    "url": "git+https://github.com/henriquebortoletto/project-01-ignite-feed.git.git"
   },
   "keywords": [
     "gitflow",
@@ -22,9 +22,9 @@
   "author": "Henrique Bortoletto <bortolettohenrique@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/henriquebortoletto/ignite-feed/issues"
+    "url": "https://github.com/henriquebortoletto/project-01-ignite-feed.git/issues"
   },
-  "homepage": "https://github.com/henriquebortoletto/ignite-feed#readme",
+  "homepage": "https://github.com/henriquebortoletto/project-01-ignite-feed.git#readme",
   "dependencies": {
     "@phosphor-icons/react": "^2.0.6",
     "date-fns": "^2.29.3",
