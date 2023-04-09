@@ -4,7 +4,12 @@ import { Trash, ThumbsUp } from '@phosphor-icons/react'
 import Avatar from '@/components/Avatar'
 import S from './styles.module.css'
 
-function Comment({ content, onDeleteComment }) {
+interface CommentsProps {
+  content: string
+  onDeleteComment: (commentToDelete: string) => void
+}
+
+function Comment({ content, onDeleteComment }: CommentsProps) {
   const [likeCount, setLikeCount] = useState(0)
 
   function handleDeleteComment() {
@@ -22,8 +27,10 @@ function Comment({ content, onDeleteComment }) {
   return (
     <div className={S.comment}>
       <Avatar
-        src="https://github.com/henriquebortoletto.png"
         hasBorder={false}
+        src="https://github.com/henriquebortoletto.png"
+        alt="Imagem de avatar do usuário"
+        loading="lazy"
       />
       <div className={S.wrapper}>
         <div className={S.content}>

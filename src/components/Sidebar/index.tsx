@@ -13,7 +13,11 @@ function Sidebar() {
         />
       </div>
       <div className={S.profile}>
-        <Avatar src="https://github.com/henriquebortoletto.png" />
+        <Avatar
+          src="https://github.com/henriquebortoletto.png"
+          alt="Imagem de avatar do usuário"
+          loading="lazy"
+        />
         <strong>Henrique Bortoletto</strong>
         <p>Software Engineer</p>
       </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
 import { format, formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
 
@@ -7,7 +7,24 @@ import Comment from '@/components/Comment'
 
 import S from './styles.module.css'
 
-function Post({ author, content, publishedAt }) {
+interface Author {
+  name: string
+  role: string
+  avatarUrl: string
+}
+
+interface Content {
+  type: 'paragraph' | 'link' | 'span'
+  content: string
+}
+
+export interface PostProps {
+  author: Author
+  content: Content[]
+  publishedAt: Date
+}
+
+function Post({ author, content, publishedAt }: PostProps) {
   const [commentValue, setCommentValue] = useState('')
   const [comments, setComments] = useState(['Iw aew Beleza'])
 
@@ -20,25 +37,25 @@ function Post({ author, content, publishedAt }) {
     addSuffix: true
   })
 
-  function handleCreateNewComment() {
+  function handleCreateNewComment(event: FormEvent) {
     event.preventDefault()
 
     setComments([...comments, commentValue])
     setCommentValue('')
   }
 
-  function handleDeleteComment(commentToDelete) {
+  function handleDeleteComment(commentToDelete: string) {
     const deletingCommentFromComments = comments.filter((comment) => comment !== commentToDelete)
 
     setComments(deletingCommentFromComments)
   }
 
-  function handleChangeNewValue() {
+  function handleChangeNewValue(event: ChangeEvent<HTMLTextAreaElement>) {
     event.target.setCustomValidity('')
     setCommentValue(event.target.value)
   }
 
-  function handleNewValueInvalid() {
+  function handleNewValueInvalid(event: InvalidEvent<HTMLTextAreaElement>) {
     event.target.setCustomValidity('Esse campo é obrigatório!')
   }
 
@@ -48,7 +65,11 @@ function Post({ author, content, publishedAt }) {
     <section className={S.post}>
       <div className={S.header}>
         <div className={S.profile}>
-          <Avatar src={author.avatarUrl} />
+          <Avatar
+            src={author.avatarUrl}
+            alt="Imagem de avatar do usuário"
+            loading="lazy"
+          />
           <div className={S.info}>
             <strong>{author.name}</strong>
             <p>{author.role}</p>

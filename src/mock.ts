@@ -1,4 +1,10 @@
-export const posts = [
+import { PostProps } from "@/components/Post";
+
+interface Post extends PostProps {
+  id: number
+}
+
+export const posts: Post[] = [
   {
     id: 1,
     author: {
@@ -52,5 +58,5 @@ export const posts = [
       }
     ],
     publishedAt: new Date("2023-05-18 17:12:34")
-  }
+  },
 ];
